@@ -2,4 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* A partir de aquí, deja cualquier otro estilo personalizado que ya tenías */
+/* 1. Fondo global continuo y más suave para toda la página */
+body {
+  /* Un degradado elegante: de azul noche profundo a un gris pizarra más cálido */
+  background: linear-gradient(to bottom, #111827 0%, #1e293b 40%, #0f172a 100%);
+  color: white;
+}
+
+/* 2. El truco de magia: Forzamos a que todas las secciones sean transparentes */
+section {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* A partir de aquí, deja cualquier otro estilo personalizado que ya tenías (si tenías alguno) */

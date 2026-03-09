@@ -61,33 +61,54 @@ import { ref } from 'vue';
 
 const libroSeleccionado = ref(null);
 
-// AQUÍ ESTÁN LOS DATOS DE TUS LIBROS
+// GALERÍA REAL DE OBRAS DE ARNOLDO SAGASTIZADO
 const libros = ref([
   {
-    titulo: "Mundos Poderes y Palabras (1996)", // Cambia el título si portada1.jpg pertenece a otro libro
-    portada: "/poeta-arnoldo-sagastizado/portada1.jpg",    // Aquí estamos llamando a tu imagen local
+    titulo: "Mundos, Poderes y Palabras",
+    portada: "/poeta-arnoldo-sagastizado/portada1.jpg",
     frases: [
-      "[Pega aquí el primer fragmento poético o frase célebre de este libro]",
-      "[Pega aquí la segunda frase o pensamiento destacado]",
-      "[Pega aquí una tercera frase impactante]"
+      "Fragmento o poema destacado de esta obra...",
+      "Otra frase importante de este libro..."
     ]
   },
   {
     titulo: "Los Secretos de Lavinia (2010)",
-    portada: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop", // Reemplazarás esto luego con /portada2.jpg
+    portada: "/poeta-arnoldo-sagastizado/portada2.jpg", // Solo guarda la imagen como portada2.jpg en public
     frases: [
-      "Una obra romántica psicológica y social...",
-      "El misterio de Lavinia se esconde en los silencios prolongados.",
-      "Las verdades más profundas a veces no se dicen con palabras."
+      "Una obra romántica psicológica y social.",
+      "Fragmento destacado de la novela..."
     ]
   },
   {
     titulo: "El Nido del Tiempo (2013)",
-    portada: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=800&auto=format&fit=crop", // Reemplazarás esto luego con /portada3.jpg
+    portada: "/poeta-arnoldo-sagastizado/portada3.jpg", // Guarda la imagen como portada3.jpg en public
     frases: [
-      "El tiempo construye su nido con las ramas de la memoria.",
-      "Cada recuerdo es un ave que vuelve a su punto de origen.",
-      "Volar no requiere alas, requiere el coraje de soltar las amarras."
+      "Primer fragmento poético de El Nido del Tiempo...",
+      "Segundo verso destacado de la obra..."
+    ]
+  },
+  {
+    titulo: "El Sistema (1996)",
+    portada: "/poeta-arnoldo-sagastizado/portada4.jpg", // Guarda la imagen como portada4.jpg en public
+    frases: [
+      "Fragmento de su primera novela...",
+      "Cita destacada sobre la sociedad o el sistema..."
+    ]
+  },
+  {
+    titulo: "Para mi Ada sin H (1995)",
+    portada: "/poeta-arnoldo-sagastizado/portada5.jpg", // Guarda la imagen como portada5.jpg en public
+    frases: [
+      "Poemario galardonado con el Primer Premio Nacional de poesía CONCULTURA.",
+      "Verso premiado..."
+    ]
+  },
+  {
+    titulo: "Los Niños de Bagdad (2006)",
+    portada: "/poeta-arnoldo-sagastizado/portada6.jpg", // Guarda la imagen como portada6.jpg en public
+    frases: [
+      "Una irreverente obra de ensayo a raíz de los ataques a Irak...",
+      "Cita reflexiva del ensayo..."
     ]
   }
 ]);
@@ -102,21 +123,3 @@ const cerrarLibro = () => {
   document.body.style.overflow = 'auto';
 };
 </script>
-
-<style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-
-@keyframes modalIn {
-  from { opacity: 0; transform: scale(0.9) translateY(20px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-.animate-modal {
-  animation: modalIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-</style>

@@ -4,22 +4,19 @@ const premios = [
     año: "2023",
     titulo: "Doctor Honoris Causa",
     institucion: "Universidad Nacional",
-    descripcion: "Máximo galardón otorgado por su invaluable aporte a la literatura salvadoreña y su trayectoria intachable como poeta y humanista.",
-    destacado: true
+    descripcion: "Máximo galardón otorgado por su invaluable aporte a la literatura salvadoreña y su trayectoria intachable como poeta y humanista."
   },
   {
     año: "2015",
     titulo: "Premio Nacional de Literatura",
     institucion: "Ministerio de Cultura",
-    descripcion: "Reconocimiento a su poemario 'Ecos del Volcán', destacando su capacidad para capturar la identidad nacional.",
-    destacado: false
+    descripcion: "Reconocimiento a su poemario 'Ecos del Volcán', destacando su capacidad para capturar la identidad nacional."
   },
   {
     año: "2008",
     titulo: "Hijo Meritísimo",
     institucion: "Asamblea Legislativa de El Salvador",
-    descripcion: "Nombrado por su destacada labor en la promoción de las artes y la educación en las nuevas generaciones.",
-    destacado: false
+    descripcion: "Nombrado por su destacada labor en la promoción de las artes y la educación en las nuevas generaciones."
   }
 ];
 ---
@@ -49,18 +46,17 @@ const premios = [
             <div class="hidden md:block w-1/2"></div>
 
             <div class={`ml-8 md:ml-0 md:w-1/2 flex w-full ${index % 2 === 0 ? 'md:justify-end md:pr-12' : 'md:justify-start md:pl-12'}`}>
-              <div class={`w-full p-6 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1
-                ${premio.destacado
-                  ? 'bg-yellow-900/10 border border-yellow-500/50 shadow-[0_0_30px_rgba(234,179,8,0.15)]'
-                  : 'bg-slate-900/40 border border-slate-800 hover:border-slate-600'}`}>
 
-                <span class="text-yellow-500 font-bold text-lg mb-1 block font-['Playfair_Display']">{premio.año}</span>
-                <h3 class="text-2xl text-white font-semibold mb-2">{premio.titulo}</h3>
+              <div class="w-full p-6 rounded-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1 bg-slate-900/40 border border-slate-800 hover:border-yellow-500/50 hover:bg-yellow-900/10 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+
+                <span class="text-yellow-500 font-bold text-lg mb-1 block font-['Playfair_Display'] transition-transform duration-300 group-hover:scale-105 origin-left">{premio.año}</span>
+                <h3 class="text-2xl text-white font-semibold mb-2 group-hover:text-yellow-400 transition-colors">{premio.titulo}</h3>
                 <span class="text-slate-400 text-sm uppercase tracking-wider block mb-4">{premio.institucion}</span>
                 <p class="text-slate-300 font-light leading-relaxed">
                   {premio.descripcion}
                 </p>
               </div>
+
             </div>
 
           </div>

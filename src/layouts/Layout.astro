@@ -1,0 +1,192 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Tributo al poeta salvadoreño Arnoldo Sagastizado, Doctor Honoris Causa." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-950 text-slate-300 font-['Inter'] antialiased flex flex-col min-h-screen">
+
+    <header id="navbar" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-3xl transition-transform duration-500">
+      <nav class="relative z-50 bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-full px-6 py-3 flex justify-between items-center shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+
+        <a href="/" class="text-xl font-['Playfair_Display'] font-bold tracking-widest text-yellow-500 hover:scale-105 transition-transform relative z-50">
+          A<span class="text-slate-400">.</span>S
+        </a>
+
+        <ul class="hidden md:flex gap-8 text-xs font-semibold tracking-widest uppercase text-slate-300">
+          <li><a href="#biografia" class="hover:text-yellow-400 transition-colors">Biografía</a></li>
+          <li><a href="#libros" class="hover:text-yellow-400 transition-colors">Libros</a></li>
+          <li><a href="#obras" class="hover:text-yellow-400 transition-colors">Obras</a></li>
+          <li><a href="#reconocimientos" class="hover:text-yellow-400 transition-colors">Premios</a></li>
+        </ul>
+
+        <a href="#obras" class="hidden md:block bg-yellow-500 text-slate-950 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-yellow-400 hover:shadow-[0_0_15px_rgba(234,179,8,0.4)] transition-all">
+          Leer
+        </a>
+
+        <button id="mobile-menu-btn" class="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors focus:outline-none">
+          <div class="w-5 h-4 flex flex-col justify-between relative">
+            <span class="burger-line w-full h-0.5 bg-yellow-500 rounded-full transition-all duration-300 origin-left"></span>
+            <span class="burger-line w-full h-0.5 bg-yellow-500 rounded-full transition-all duration-300"></span>
+            <span class="burger-line w-full h-0.5 bg-yellow-500 rounded-full transition-all duration-300 origin-left"></span>
+          </div>
+        </button>
+
+      </nav>
+    </header>
+
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-3xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-500 -translate-y-5">
+      <ul class="flex flex-col gap-10 text-center">
+        <li><a href="#biografia" class="mobile-link text-4xl font-['Playfair_Display'] font-bold text-slate-300 hover:text-yellow-500 transition-colors block transform hover:scale-110 duration-300">Biografía</a></li>
+        <li><a href="#libros" class="mobile-link text-4xl font-['Playfair_Display'] font-bold text-slate-300 hover:text-yellow-500 transition-colors block transform hover:scale-110 duration-300">Libros</a></li>
+        <li><a href="#obras" class="mobile-link text-4xl font-['Playfair_Display'] font-bold text-slate-300 hover:text-yellow-500 transition-colors block transform hover:scale-110 duration-300">Obras</a></li>
+        <li><a href="#reconocimientos" class="mobile-link text-4xl font-['Playfair_Display'] font-bold text-slate-300 hover:text-yellow-500 transition-colors block transform hover:scale-110 duration-300">Premios</a></li>
+      </ul>
+
+      <div class="absolute bottom-10 w-24 h-1 bg-yellow-500 rounded-full opacity-50"></div>
+    </div>
+
+    <main class="grow">
+      <slot />
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-900 relative overflow-hidden">
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-150 h-50 bg-yellow-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-6 pt-20 pb-10 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 mb-16">
+
+          <div class="md:col-span-1">
+            <a href="/" class="text-2xl font-['Playfair_Display'] font-bold tracking-widest text-yellow-500 mb-6 block">
+              A. SAGASTIZADO
+            </a>
+            <p class="text-slate-400 font-light leading-relaxed mb-6 italic border-l-2 border-slate-800 pl-4">
+              "La poesía es el eco de la melodía del universo en el corazón de los humanos."
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-sm">Explorar</h4>
+            <ul class="space-y-4 text-slate-400 text-sm font-medium">
+              <li><a href="#biografia" class="hover:text-yellow-400 transition-colors flex items-center gap-3"><span class="text-yellow-500 text-[10px]">■</span> Biografía</a></li>
+              <li><a href="#libros" class="hover:text-yellow-400 transition-colors flex items-center gap-3"><span class="text-yellow-500 text-[10px]">■</span> Obras Publicadas</a></li>
+              <li><a href="#obras" class="hover:text-yellow-400 transition-colors flex items-center gap-3"><span class="text-yellow-500 text-[10px]">■</span> Poemas Destacados</a></li>
+              <li><a href="#reconocimientos" class="hover:text-yellow-400 transition-colors flex items-center gap-3"><span class="text-yellow-500 text-[10px]">■</span> Doctor Honoris Causa</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-sm">Contacto</h4>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed font-light">
+              Para invitaciones a eventos literarios, conferencias o consultas sobre el legado de su obra.
+            </p>
+            <a href="mailto:correo@ejemplo.com" class="inline-flex items-center gap-3 text-yellow-500 font-medium hover:text-yellow-400 transition-colors border border-yellow-500/30 px-6 py-3 rounded-full hover:bg-yellow-500/10">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              Contactar al Autor
+            </a>
+          </div>
+
+        </div>
+
+        <div class="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-slate-500 text-xs tracking-widest uppercase font-medium">
+            © {new Date().getFullYear()} Tributo a Arnoldo Sagastizado.
+          </p>
+          <p class="text-slate-600 text-xs tracking-wider uppercase">
+            Diseñado en El Salvador
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileOverlay = document.getElementById('mobile-menu-overlay');
+      // Corregido: Indicamos a TypeScript que estos son elementos HTML para poder usar .style
+      const burgerLines = document.querySelectorAll('.burger-line') as NodeListOf<HTMLElement>;
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      let isMenuOpen = false;
+
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+          // Corregido: Uso de ? (Optional Chaining) para evitar error de posible "null" y se actualiza la clase a -translate-y-5
+          mobileOverlay?.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-5');
+          mobileOverlay?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          document.body.style.overflow = 'hidden';
+
+          if(burgerLines.length >= 3) {
+            burgerLines[0].style.transform = 'rotate(45deg)';
+            burgerLines[1].style.opacity = '0';
+            burgerLines[2].style.transform = 'rotate(-45deg)';
+          }
+        } else {
+          mobileOverlay?.classList.add('opacity-0', 'pointer-events-none', '-translate-y-5');
+          mobileOverlay?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          document.body.style.overflow = '';
+
+          if(burgerLines.length >= 3) {
+            burgerLines[0].style.transform = 'rotate(0)';
+            burgerLines[1].style.opacity = '1';
+            burgerLines[2].style.transform = 'rotate(0)';
+          }
+        }
+      }
+
+      mobileBtn?.addEventListener('click', toggleMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if(isMenuOpen) toggleMenu();
+        });
+      });
+
+      let lastScroll = 0;
+      const navbar = document.getElementById('navbar');
+
+      if (navbar) {
+        window.addEventListener('scroll', () => {
+          if(isMenuOpen) return;
+
+          const currentScroll = window.pageYOffset;
+
+          if (currentScroll <= 0) {
+            navbar.classList.remove('-translate-y-32');
+            return;
+          }
+
+          if (currentScroll > lastScroll && currentScroll > 100) {
+            navbar.classList.add('-translate-y-32');
+          } else if (currentScroll < lastScroll) {
+            navbar.classList.remove('-translate-y-32');
+          }
+
+          lastScroll = currentScroll;
+        });
+      }
+    </script>
+  </body>
+</html>

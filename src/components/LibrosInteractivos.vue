@@ -1,5 +1,5 @@
 <template>
-  <section id="libros" class="py-24 bg-slate-950 relative">
+  <section id="libros" class="py-24 relative">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
         <span class="text-yellow-500 font-medium tracking-[0.2em] uppercase text-sm mb-2 block">Bibliografía</span>

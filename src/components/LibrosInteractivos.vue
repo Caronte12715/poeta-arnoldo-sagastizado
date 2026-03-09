@@ -61,32 +61,33 @@ import { ref } from 'vue';
 
 const libroSeleccionado = ref(null);
 
+// AQUÍ ESTÁN LOS DATOS DE TUS LIBROS
 const libros = ref([
   {
-    titulo: "La Ventana del Alma",
-    portada: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop",
+    titulo: "Mundos Poderes y Palabras (1996)", // Cambia el título si portada1.jpg pertenece a otro libro
+    portada: "/poeta-arnoldo-sagastizado/portada1.jpg",    // Aquí estamos llamando a tu imagen local
     frases: [
-      "El silencio no es vacío, es un lienzo donde el alma escribe sus verdades más profundas.",
-      "Caminamos entre versos olvidados, buscando la luz en la penumbra de la memoria.",
-      "Cada palabra es un puente tendido hacia el infinito de lo que no nos atrevemos a decir."
+      "[Pega aquí el primer fragmento poético o frase célebre de este libro]",
+      "[Pega aquí la segunda frase o pensamiento destacado]",
+      "[Pega aquí una tercera frase impactante]"
     ]
   },
   {
-    titulo: "Raíces de Ceniza",
-    portada: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop",
+    titulo: "Los Secretos de Lavinia (2010)",
+    portada: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop", // Reemplazarás esto luego con /portada2.jpg
     frases: [
-      "Vengo de una tierra donde el volcán duerme pero el corazón del pueblo siempre arde.",
-      "Las cicatrices de la historia son las rimas que dan ritmo a nuestro presente.",
-      "No hay olvido que pueda borrar el perfume del café y el sudor de la esperanza."
+      "Una obra romántica psicológica y social...",
+      "El misterio de Lavinia se esconde en los silencios prolongados.",
+      "Las verdades más profundas a veces no se dicen con palabras."
     ]
   },
   {
-    titulo: "Canto a la Libertad",
-    portada: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=800&auto=format&fit=crop",
+    titulo: "El Nido del Tiempo (2013)",
+    portada: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=800&auto=format&fit=crop", // Reemplazarás esto luego con /portada3.jpg
     frases: [
-      "La pluma es el único fusil que no hiere el cuerpo, sino que libera la mente.",
-      "Volar no requiere alas, requiere el coraje de soltar las amarras del miedo.",
-      "Ser libre es reconocerse en la mirada del otro y encontrar la paz en la palabra compartida."
+      "El tiempo construye su nido con las ramas de la memoria.",
+      "Cada recuerdo es un ave que vuelve a su punto de origen.",
+      "Volar no requiere alas, requiere el coraje de soltar las amarras."
     ]
   }
 ]);
